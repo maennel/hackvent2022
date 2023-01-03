@@ -1,0 +1,10 @@
+vpn/
+./*.png
+
+venv/
+metamask_recovery.png
+.idea/
+__pycache__/
+
+wip.txt
+build/

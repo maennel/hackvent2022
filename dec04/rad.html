@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The UPICode</title>
+</head>
+<body>
+
+<h3>[HV22.04] Santa's radians</h3>
+
+<canvas width="1200" height="200" id="canvasPiCode" style="border: 1px solid black"></canvas>
+<script>
+    const canvas = document.getElementById("canvasPiCode");
+    const context = canvas.getContext("2d");
+    let clientX = 0;
+
+    canvas.addEventListener('mousemove', e => {
+        clientX = e.clientX*7/1000;
+    });
+
+    let rot = [2.5132741228718345, 0.4886921905584123, -1.2566370614359172, 0, 2.548180707911721, -1.9547687622336491, -0.5235987755982988, 1.9547687622336491, -0.3141592653589793, 0.6283185307179586, -0.3141592653589793, -1.8151424220741028, 1.361356816555577, 0.8377580409572781, -2.443460952792061, 2.3387411976724013, -0.41887902047863906, -0.3141592653589793, -0.5235987755982988, -0.24434609527920614, 1.8151424220741028];
+    // In degrees: 
+    // [144, 28, -72, 0, 146, -112, -30, 112, -18, 36, -18, -104, 78, 48, -140, 134, -24, -18, -30, -14, 104]
+    // [144, 28, 288, 0, 146, -112, -30, 112, -18, 36, -18, -104, 78, 48, -140, 134, -24, -18, -30, -14, 104]
+    // hex:                 90 1c 6c 00 92 44 96 70 a2 24 a2 4c 4e 30 28 86 9c a2 96 a6 68
+    // HV22{} => (decimal)  72  86  50  50 123 125
+    // [1.2566370614359172, 1.5009831567151233, 0.8726646259971648, 0.8726646259971648, 2.1467549799530254, 2.1816615649929116]
+    //           (hex)      48  56  32  32  7b  7d
+    //                     -72  58 132  50 -23             
+    let size = canvas.width / (rot.length+2);
+
+    context.strokeStyle = "black";
+    context.lineWidth = size*5/16;
+    context.shadowOffsetX = size/4;
+    context.shadowOffsetY = size/4;
+    context.shadowColor = "gray";
+    context.shadowBlur = size/4;
+
+    let animCount = 0;
+    let currRot = rot;
+
+    function anim() {
+        context.clearRect(0,0,canvas.width,canvas.height);
+        let values = [];
+        let chars = [];
+        currRot = [];
+        for (let i = 0; i < rot.length; i++) {
+            context.beginPath();
+            currRot.push(rot[i]+animCount+clientX);
+            context.arc((i + 1) * size, canvas.height / 2, size * 2 / 7, rot[i]+animCount+clientX, rot[i] + 5 +animCount+clientX);
+            // context.arc((i + 1) * size, canvas.height / 2, size * 2 / 7, 0, rot[i]  +animCount+clientX);
+            values.push(Math.round(rtod(rot[i] + animCount+clientX)));
+            // chars.push(String.fromCharCode(Math.round(rtod(rot[i] + animCount+clientX))));
+            context.stroke();
+        }
+        flag=values.join("");
+        if (flag.startsWith("HV22")) {
+            console.log(clientX);
+            console.log(animCount);
+            // console.log(chars.join(""));
+            console.log(values.join(","));
+        }        
+        animCount+=0.001;
+        requestAnimationFrame(anim);
+    }
+
+    function rtod(radians)
+    {
+      var pi = Math.PI;
+      d = radians * 360/(2*pi);
+      
+      // if(d<0){d+=360}
+      // d += 180;
+      return d;
+      return d % 360;
+    }
+
+    function dtor(degrees) {
+        r = degrees * 2 * Math.PI / 360;
+        return r;
+    }
+    anim();
+
+</script>
+
+</body>
+</html>
