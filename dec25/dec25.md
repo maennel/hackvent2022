@@ -23,7 +23,7 @@ The following steps were executed to get the flag:
 1. Navigate to page.
 2. Extract data from jpeg image.
 3. Find `/upload` page using `dirbuster` or `ffuf`.
-4. Create a pytorch machine learing model in [solver.py](./solver.py)
+4. Create a pytorch machine learing model in [solver.py](./dec25-solver.py)
 5. Upload model and see flag.
 
 ```

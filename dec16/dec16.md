@@ -33,7 +33,7 @@ To do so, I followed this algorithm:
 4. If it is a QR code and does not match the wrong QR code, it is the QR code containing the flag. Stop the process at that point.
 5. If it is not a QR code, it's either completely white (skip it in that case) or multiple QR codes at a deeper level. In the latter case, we would recurse and start from the beginning one level deeper.
 
-See [my code(in python)](./solver.py) for the final solution. It runs through in about 40 seconds max.
+See [my code(in python)](./dec16-solver.py) for the final solution. It runs through in about 40 seconds max.
 
 The QR code containing the flag looks as follows (and I don't know where exactly it's located in the initial image ;) ):
 
