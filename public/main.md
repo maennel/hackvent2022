@@ -1,5 +1,35 @@
 # Write-up Hackvent 2022
 
+## Table of contents
+- [[HV22.01] QR means quick reactions, right?](#hv2201-qr-means-quick-reactions-right)
+- [[HV22.02] Santa's song](#hv2202-santas-song)
+- [[HV22.03] gh0st](#hv2203-gh0st)
+- [[HV22.04] Santa's radians](#hv2204-santas-radians)
+- [[HV22.05] Missing gift](#hv2205-missing-gift)
+- [[HV22.06] privacy isn't given](#hv2206-privacy-isnt-given)
+- [[HV22.07] St. Nicholas's animation](#hv2207-st-nicholass-animation)
+- [[HV22.08] Santa's Virus](#hv2208-santas-virus)
+- [[HV22.09] Santa's Text](#hv2209-santas-text)
+- [[HV22.10] Notme](#hv2210-notme)
+- [[HV22.11] Santa's Screenshot Render Function](#hv2211-santas-screenshot-render-function)
+- [[HV22.12] Funny SysAdmin](#hv2212-funny-sysadmin)
+- [[HV22.13] Noty](#hv2213-noty)
+- [[HV22.14] Santa's Bank](#hv2214-santas-bank)
+- [[HV22.15] Message from Space](#hv2215-message-from-space)
+- [[HV22.16] Needle in a qrstack](#hv2216-needle-in-a-qrstack)
+- [[HV22.17] Santa's Sleigh](#hv2217-santas-sleigh)
+- [[HV22.18] Santa's Nice List](#hv2218-santas-nice-list)
+- [[HV22.19] Re-Entry to Nice List 2](#hv2219-re-entry-to-nice-list-2)
+- [[HV22.20] § 1337: Use Padding 📝](#hv2220--1337-use-padding-)
+- [[HV22.21] Santa's Workshop](#hv2221-santas-workshop)
+- [[HV22.22] Santa's UNO flag decrypt0r](#hv2222-santas-uno-flag-decrypt0r)
+- [[HV22.23] Code but no code](#hv2223-code-but-no-code)
+- [[HV22.24] It's about time for some RSA](#hv2224-its-about-time-for-some-rsa)
+- [[HV22.25] Santa's Prophesy](#hv2225-santas-prophesy)
+- [[HV22.H1] Santa's Secret](#hv22h1-santas-secret)
+- [[HV22.H2] The Elves's Secret](#hv22h2-the-elvess-secret)
+- [[HV22.H3] Ruprecht's Secret](#hv22h3-ruprechts-secret)
+
 ## Intro and credits
 
 This is my write-up for the 2022 Hackvent on hacking-lab.com.

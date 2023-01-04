@@ -22,9 +22,18 @@ done
 
 rm -f build/main.md
 
+# Compose main.md file
 cat build/md/hv22.md > build/main.md
 cat build/md/dec* | sed 's/^#/##/g' >> build/main.md
 cat build/md/hidden* | sed 's/^#/##/g' >> build/main.md
+
+# Create table of contents of all second level headers starting with a "["
+grep '^##[^#]\[.*' build/main.md | sed 's/## //g' > build/md/.headers
+cat build/md/.headers | tr "A-Z\ " "a-z\-" | tr -cd "a-z0-9\-\n" | sed 's/^/#/g' > build/md/.links
+paste build/md/.headers build/md/.links | sed 's/^/- [/g' | sed 's/\t/](/g' | sed 's/$/)/g' > build/md/.toc
+sed -i '/<TOC>/{r build/md/.toc
+              d}' build/main.md
+
 
 # TODO: Convert to html either via https://markdowntohtml.com/ or via Github.
 rm -rf public/
