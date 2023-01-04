@@ -45,7 +45,7 @@ Challenge descriptions and source material was taken from Hacking-lab.com with t
 ### Description
 Santa's brother Father Musk just bought out a new decoration factory. He sacked all the developers and tried making his own QR code generator but something seems off with it. Can you try and see what he's done wrong?
 
-![QR ball](./static/326b39e0-ccf5-4b94-88ff-e1b654e2c5b9.gif)
+![QR ball](../dec01/326b39e0-ccf5-4b94-88ff-e1b654e2c5b9.gif)
 
 ### Solution
 - Split the provided GIF into its frames using an online service, for example https://ezgif.com/split.
@@ -79,7 +79,7 @@ The elves say that Santa has always liked to hide secret messages in his work an
 
 What are you waiting for? Go on, help the elves!
 
-The provided pdf with [sheet music](./static/song.pdf).
+The provided pdf with [sheet music](../dec02/song.pdf).
 
 #### Hints
 **Hint #1**: Keep in mind that you are given a web service, not a play button for a song.
@@ -172,7 +172,7 @@ HV22{nUll_bytes_st0mp_cPy7h0n}
 Santa, who is a passionate mathematician, has created a small website to train his animation coding skills. Although Santa lives in the north pole, where the degrees are very low, the website's animation luckily did not freeze. It just seems to move very slooowww. But how does this help...? The elves think there might be a flag in the application...
 
 ### Solution
-See [solver.js](./static/solver.js).
+See [solver.js](../dec04/solver.js).
 
 ### Flag
 ```
@@ -350,7 +350,7 @@ The video show four sections of a micro-QR code and how to assemble them back to
 
 Do so and get the following image:
 
-![Readable micro-QR code](./static/micro-qr-flag.jpg)
+![Readable micro-QR code](../dec07/micro-qr-flag.jpg)
 
 Read this with a QR code reader (you might have to wiggle a bit).
 
@@ -382,7 +382,7 @@ HV22{b0f}
 ### Description
 A user by the name of HACKventSanta may be spreading viruses. But Santa would never do that! The elves want you to find more information about this filthy impersonator.
 
-![Evil santa](./static/37ff7417-5c2d-46bc-985c-715e6193d57a.jpg)
+![Evil santa](../dec08/37ff7417-5c2d-46bc-985c-715e6193d57a.jpg)
 
 ### Solution
 This was a cat and mouse game through popular platforms, exploiting the open source information they provide.
@@ -632,7 +632,7 @@ The meta data root URL is at http://169.254.169.254/latest/meta-data/.
 Screenshotting this URL allowed me to get a picture of the AWS key ID, the secret key and the token - all needed in order to be able to interact with the AWS API. 
 This represented a picture of about 1300 characters to be taken over from the picture somehow.
 
-![AWS secrets in an image](./static/r0_SecretReaderRole_1119.png)
+![AWS secrets in an image](../dec11/r0_SecretReaderRole_1119.png)
 
 Gladly, it was a Sunday (although sunny).
 
@@ -943,7 +943,7 @@ From the challenge description and the web app, I concluded the following:
 
 The support page looks suspicious. We can paste a URL that then gets opened by a support agent? Awesome!
 
-![Support page](./static/dec14-support.png)
+![Support page](../dec14/dec14-support.png)
 
 To validate the assumption, I connected via VPN and started a `nc -l 1234` on my machine.
 
@@ -993,7 +993,7 @@ Server: ludus
 
 And we got that promotion code!
 
-![Promotion code](./static/dec14-promotion.png)
+![Promotion code](../dec14/dec14-promotion.png)
 
 ### Links
 - https://github.com/OWASP/wstg/blob/master/document/4-Web_Application_Security_Testing/06-Session_Management_Testing/05-Testing_for_Cross_Site_Request_Forgery.md#how-to-test
@@ -1035,9 +1035,9 @@ I decided to load the cu8 file in Audacity (as it seems to be able to open this 
 
 Subsequently, I processed the signal in GRC with the following flowgraph:
 
-![GRC flowgraph](./static/dec15-flowgraph.png)
+![GRC flowgraph](../dec15/dec15-flowgraph.png)
 
-Finally, I post-processed the binary data with a [custom script](./static/nrzi.py) to decode the differential "non-return to zero inverted" encoding of the signal.
+Finally, I post-processed the binary data with a [custom script](../dec15/nrzi.py) to decode the differential "non-return to zero inverted" encoding of the signal.
 
 ```python
 ##!/usr/bin/env python
@@ -1100,7 +1100,7 @@ Santa has lost his flag in a qrstack - it is really like finding a needle in a h
 Can you help him find it?
 
 ### Solution
-In the [provided image (which is very large)](./static/haystack.png) a big QR code is composed by many (as in "a lot of") smaller QR codes at different scales.
+In the [provided image (which is very large)](../dec16/haystack.png) a big QR code is composed by many (as in "a lot of") smaller QR codes at different scales.
 
 To find the needle (the QR code containing the flag) in the haystack (the bunchof QR codes), I tried to disqalify wrong QR codes in an as lightweight way as possible.
 
@@ -1111,11 +1111,11 @@ To do so, I followed this algorithm:
 4. If it is a QR code and does not match the wrong QR code, it is the QR code containing the flag. Stop the process at that point.
 5. If it is not a QR code, it's either completely white (skip it in that case) or multiple QR codes at a deeper level. In the latter case, we would recurse and start from the beginning one level deeper.
 
-See [my code(in python)](./static/dec16-solver.py) for the final solution. It runs through in about 40 seconds max.
+See [my code(in python)](../dec16/dec16-solver.py) for the final solution. It runs through in about 40 seconds max.
 
 The QR code containing the flag looks as follows (and I don't know where exactly it's located in the initial image ;) ):
 
-![QR code containing the flag](./static/flag_scaled.png)
+![QR code containing the flag](../dec16/flag_scaled.png)
 
 ### Flag
 ```
@@ -1148,7 +1148,7 @@ Unfortunately, Rudolph is already on holiday. He seems to be in a strop because 
 #### Hints
 - Rodolph is heavy on duty during his holiday trip, but he managed to send und at least a photo of his first step.
 
-[![Hint 1](./static/3f256b4c-ea03-4239-957c-b730ae0994f4_scaled.jpg)](./static/3f256b4c-ea03-4239-957c-b730ae0994f4.jpg)
+[![Hint 1](../dec17/3f256b4c-ea03-4239-957c-b730ae0994f4_scaled.jpg)](../dec17/3f256b4c-ea03-4239-957c-b730ae0994f4.jpg)
 
 - Rudolf finally wants some peace and quiet on vacation. But send us one last message together with a picture: "I thought they speak 8 or 7 N1"
 
@@ -1158,7 +1158,7 @@ Initial reaction: 🤷
 
 The second hint pointed towards a software called [PulseView](https://sigrok.org/wiki/PulseView).
 
-With this software I was able to open the [provided file](./static/SantasSleigh.raw).
+With this software I was able to open the [provided file](../dec17/SantasSleigh.raw).
 
 Next:
 - Open the `raw` file in PulseView via "import raw binary logic data".
@@ -1217,7 +1217,7 @@ Can you help Santa access the list and make those kids happy?
 
 ### Solution
 
-Start investigating the [provided zip file](./static/nice-list.zip), which seems to be encrypted.
+Start investigating the [provided zip file](../dec18/nice-list.zip), which seems to be encrypted.
 
 `exiftool -a nice-list.zip` results in "Zip compression: unknown (99)".
 
@@ -1313,11 +1313,11 @@ Try to enter the nice list and get the flag!
 ### Solution
 The provided web service looks as follows:
 
-![Nice list v2 page](./static/dec19-page.png)
+![Nice list v2 page](../dec19/dec19-page.png)
 
 The two provided contracts can be found here:
-- [NiceListV2.sol](./static/NiceListV2.sol)
-- [SantaCoin.sol](./static/SantaCoin.sol)
+- [NiceListV2.sol](../dec19/NiceListV2.sol)
+- [SantaCoin.sol](../dec19/SantaCoin.sol)
 
 So the goal was to get onto the nice list by bumping my credit amount to 100 SANTA somehow and buy in.
 To do so, I had to find 98.5 SANTA somewhere since my current credit was at 1.5 ETH/SANTA only.
@@ -1335,7 +1335,7 @@ Namely, the `nonReentrant` clause is missing on the `withdrawAsCoins` function.
 
 Therefore, we can invoke `withdrawAsEther` from a specially crafted contract and equip the `receive` function such that `withdrawAsCoins` is called before `withdrawAsEther` returns.
 
-This core part of the exploit looks as follows in the [attacking contract named LudusContract](./static/LudusContract.sol):
+This core part of the exploit looks as follows in the [attacking contract named LudusContract](../dec19/LudusContract.sol):
 
 ```solidity
 function withdraw(uint amount) public {
@@ -1368,7 +1368,7 @@ At this point, the contract will have balances of ~1 ETH and 20 SANTA.
 
 At this point, invoking the `isNice` function on the `NiceListV2` contract should return true and I could go back to the "Nice Validator" web UI and click the `Am I Nice?` button, displaying the flag 🎉
 
-![Nice you are indeed](./static/dec19-flag.png)
+![Nice you are indeed](../dec19/dec19-flag.png)
 
 ### Notes
 A few useful notes:
@@ -1410,9 +1410,9 @@ Santa's friends Alice and Bob have suggested that the application has a padding 
 
 Santa has also written a concept sheet of the encryption process: 
 
-![Alice and Bob](./static/18ea12cd-8ac2-4106-a00b-a3075d90d2a8.png)
+![Alice and Bob](../dec20/18ea12cd-8ac2-4106-a00b-a3075d90d2a8.png)
 
-Source file of the service listening on the socket: [santa_aes_source.py](./static/santa_aes_source.py)
+Source file of the service listening on the socket: [santa_aes_source.py](../dec20/santa_aes_source.py)
 
 ### Solution
 For this challenge, it was pretty clear that we had to attack the electronic code book (ECB) block cipher mode of operation of AES being used.
@@ -1488,7 +1488,7 @@ e94f96d4bba3a7d2c764ecd37c8e560e
 The brute-forced character is "{", since the second and the 4th block are identical.
 ```
 
-With this approach, I brute-forced character by character using a half-manual, half-programmed approach. See my [solver](./static/dec20-solver.py) for details.
+With this approach, I brute-forced character by character using a half-manual, half-programmed approach. See my [solver](../dec20/dec20-solver.py) for details.
 
 ### Links
 - https://yidaotus.medium.com/breaking-ecb-by-prepending-your-own-message-b7b376d5efbb
@@ -1519,7 +1519,7 @@ HV22{len()!=len()}
 ### Description
 Santa decided to invite you to his workshop. Can you find a way to pwn it and find the flag?
 
-[File](./static/santasworkshop.elf).
+[File](../dec21/santasworkshop.elf).
 
 ### Solution
 None. Did not solve.
@@ -1549,7 +1549,7 @@ None. Did not solve.
 The elves made Santa a fancy present for this Christmas season. He received a fancy new Arduino where his elves encoded a little secret for him. However, Santa is super stressed out at the moment, as the children's presents have to be sent out soon. Hence, he forgot the login, the elves told him earlier. Can you help Santa recover the login and retrieve the secret the elves sent him?
 
 ### Solution
-An [Arduino AVR8 binary](./static/unoflagdecryptor.elf) is provided.
+An [Arduino AVR8 binary](../dec22/unoflagdecryptor.elf) is provided.
 
 I opened the binary in Ghidra and reversed the main function.
 
@@ -1633,11 +1633,11 @@ Santa loves puzzles and hopes you do too ;) Find the secret inputs which fulfil 
 ### Solution
 The challenge is served as a small web service, seemingly distributing Santa's dedicated signatures and validating whether we (the one holding the private key) have solved the challenge.
 
-![Santa's signatures](./static/dec23-page.png)
+![Santa's signatures](../dec23/dec23-page.png)
 
 Via that page, we can download two Solidity contracts:
-- [Setup.sol](./static/Setup.sol)
-- [Challenge.sol](./static/Challenge.sol)
+- [Setup.sol](../dec23/Setup.sol)
+- [Challenge.sol](../dec23/Challenge.sol)
 
 While `Setup.sol` simply deploys `Challenge.sol`, the latter gives more usable hints.
 
@@ -1711,7 +1711,7 @@ So, let's split up the provided signature into `r, s, v` and compute a new valid
 
 Again, I tried to validate this locally, as for this minimal step it had to be possible to be validated.
 
-To make validation work I used the `Web3.py` library and ran the following code (find it in my [dec23-debugger.py script](./static/dec23-debugger.py):
+To make validation work I used the `Web3.py` library and ran the following code (find it in my [dec23-debugger.py script](../dec23/dec23-debugger.py):
 
 ```python
 ## Expected signer: 0xa359fAc1B77084b708554B8154a646a216F8d89e
@@ -1768,7 +1768,7 @@ It is only by adding this prefix to the message before hashing that the public k
 
 #### Conclusion
 For this challenge, I wanted to implement the entire solution in python.
-You can find the entire script [over here](./static/dec23-solver.py).
+You can find the entire script [over here](../dec23/dec23-solver.py).
 
 The following excerpt represents the main function and shows the high level interactions.
 
@@ -1925,7 +1925,7 @@ The following steps were executed to get the flag:
 1. Navigate to page.
 2. Extract data from jpeg image.
 3. Find `/upload` page using `dirbuster` or `ffuf`.
-4. Create a pytorch machine learing model in [solver.py](./static/dec25-solver.py)
+4. Create a pytorch machine learing model in [solver.py](../dec25/dec25-solver.py)
 5. Upload model and see flag.
 
 ```
