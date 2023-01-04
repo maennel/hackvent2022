@@ -1,6 +1,40 @@
 # Write-up Hackvent 2022
 
+## Intro and credits
+
+This is my write-up for the 2022 Hackvent on hacking-lab.com.
+Hackvent is a remote, public and free-to-play jeopardy-style CTF.
+Each day during advent, one challenge gets released.
+As christmas approaches, the difficulty of every new challenge increases by a bit.
+You can read more about it [here](https://hacking-lab.com/events/hackvent-2022#what-is-hackvent).
+
+Hackvent is organised by Compass Security and many volunteers contributing challenges and maintaining infrastructure for things to work smoothly.
+
+I want to thank everyone involved for letting me learn and discover new fields and unknown corners of already explored areas.
+Thanks a lot kuyaya for keeping challenges stable and hackers engaged.
+
+This time, I approached especially the web3 challenges as a purely educational exercise, but still with a goal of solving them all.
+With this, I mainly wanted to aquire more knowledge in this - from my perspective - yet unmapped territory.
+Many thanks to HaCk0 for your challenges and to mcia for helping me getting unstuck many times. I learned a ton of new stuff thanks to you.
+
+Further credits go to all the challenge creators for the awesome challenges and of course to all the hackers for solving them (especially the ones where I gave up from the outset).
+
+Finally, I want to thank my family as this was again another layer on top of an already busy December.
+
+This year, I missed a few "24h deadlines" and didn't solve day 21 and day 24, landing on the 17th place of the ranking.
+
+All the solved challenges are documented in differing degrees of detail hereafter.
+
+Happy reading,
+
+*-ludus*
+
+## Licensing and material
+
+Challenge descriptions and source material was taken from Hacking-lab.com with the permission of the organisers and authors of challenges.
+
 ## Table of contents
+
 - [[HV22.01] QR means quick reactions, right?](#hv2201-qr-means-quick-reactions-right)
 - [[HV22.02] Santa's song](#hv2202-santas-song)
 - [[HV22.03] gh0st](#hv2203-gh0st)
@@ -29,31 +63,6 @@
 - [[HV22.H1] Santa's Secret](#hv22h1-santas-secret)
 - [[HV22.H2] The Elves's Secret](#hv22h2-the-elvess-secret)
 - [[HV22.H3] Ruprecht's Secret](#hv22h3-ruprechts-secret)
-
-## Intro and credits
-
-This is my write-up for the 2022 Hackvent on hacking-lab.com.
-Hackvent is a remote, public and free-to-play jeopardy-style CTF.
-Each day during advent, one challenge gets released. 
-As christmas approaches, the difficulty of every new challenge increases by a bit. 
-You can read more about it [here](https://hacking-lab.com/events/hackvent-2022#what-is-hackvent).
-
-Hackvent is organised by Compass Security and many volunteers contributing challenges and maintaining infrastructure for things to work smoothly.
-
-I want to thank everyone for letting me learn and discover new fields and unknown corners of already explored areas. Thanks a lot kuyaya for keeping challenges stable and hackers engaged.
-
-This year, I approached the web3 challenges as purely educational, but with a goal of solving them all as I wanted to aquire more knowledge in this area - many thanks to HaCk0 for your challenges and to mcia for helping me getting unstuck many times. I learned a ton of new stuff thanks to you.
-
-Further credits go to all the challenge creators for the awesome challenges and of course to all the hackers for solving them (especially the ones where I gave up from the outset).
-
-Finally, I want to thank my family as this was again another layer on top of an already busy December.
-
-Happy reading,
--ludus
-
-## Licensing and material
-
-Challenge descriptions and source material was taken from Hacking-lab.com with the permission of the organisers and authors of challenges.
 
 ## [HV22.01] QR means quick reactions, right?
 
